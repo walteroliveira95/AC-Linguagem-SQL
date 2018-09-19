@@ -1,1 +1,3 @@
-# AC-Linguagem-SQL
+# LMS
+
+* Sistema de gerenciamento escolar

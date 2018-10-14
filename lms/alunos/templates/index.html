@@ -1,8 +1,0 @@
-{% if user.is_authenticated %}
-     <p>Welcome {{ user.username }} !!!</p>
-{% endif %}
-
-<a href="">Notas e faltas</a>
-<a href="">Materias</a>
-<a href="{% url 'accounts:logout' %}">logout</a>
-

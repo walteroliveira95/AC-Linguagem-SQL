@@ -1,13 +1,16 @@
+use Projeto
+drop database teste2
+create database teste2
+use teste2
+
+
 create table Usuario(
 ID smallint IDENTITY (1,1) not null constraint PK_IDusuario PRIMARY KEY (ID),
-LOGIN varchar (10) CONSTRAINT "UQ_LOGIN" UNIQUE(LOGIN)  not null,
-SENHA varchar (8) not null,
-DTExpiraÃ§Ã£o DATE CONSTRAINT dfdataexpiraÃ§Ã£o DEFAULT '01/01/1900')
+LOGIN varchar (10) not null CONSTRAINT "UQ_LOGIN" UNIQUE(LOGIN),
+SENHA varchar (16) not null constraint chksenha check (len (senha) >=8),
+DTExpiração DATE CONSTRAINT dfdataexpiração DEFAULT '01/01/1900')
 
---exec sp_help 'Usuario'
-
-
-CREATE TABLE  COORDENADOR (
+CREATE TABLE  COORDENADOR(
 ID SMALLINT IDENTITY (1,1) NOT NULL CONSTRAINT PK_IDcoordenador PRIMARY KEY(ID),
 id_usuario smallint,
 nome varchar (30),
@@ -37,7 +40,7 @@ CREATE TABLE DISCIPLINA(
 ID SMALLINT IDENTITY (1,1) NOT NULL CONSTRAINT PK_ID_DISCIPLINA PRIMARY KEY (ID),
 NOME VARCHAR (30) CONSTRAINT "UQ_NOME_DISCIPLINA" UNIQUE (NOME) NOT NULL,
 DATA DATE CONSTRAINT DFDATA DEFAULT (GETDATE()),
-STATUS VARCHAR (7) CONSTRAINT "STATUS_CHECK" CHECK (STATUS LIKE 'ABERTA' OR STATUS LIKE 'FECHADA')
+STATUS VARCHAR (7) CONSTRAINT "STATUS_CHECK" CHECK (STATUS = 'ABERTA' OR STATUS = 'FECHADA')
 CONSTRAINT "STATUS_DEFAULT" DEFAULT 'ABERTA',
 PlanoDeEnsino varchar (30),
 CargaHoraria tinyint constraint "cargahoraria_check" check (cargahoraria = 40 or cargahoraria = 80),
@@ -81,15 +84,15 @@ idAluno smallint not null constraint idaluno_fk foreign key (idAluno) references
 IdDisciplinaOfertada smallint not null constraint pk_iddiscisplinaofertada foreign key (iddisciplinaofertada) references disciplinaofertada(id),
 DtSolicitacao date not null constraint dfdtsolicitacao default (getdate()),
 idcoordenador smallint null constraint fk_idcoordenador foreign key (idcoordenador) references coordenador(id),
-status varchar(10) not null constraint  status_check_solicitacaomatricula check (status like 'solicitada' or status like 'aprovada' or status like 'rejeitada' or status like 'cancelada')
+status varchar(10) not null constraint  status_check_solicitacaomatricula check (status = 'solicitada' or status = 'aprovada' or status = 'rejeitada' or status = 'cancelada')
 constraint status_default_solicitacaomatricula  default ('solicitada'));
 
 create table atividade(
 id smallint not null constraint  pk_id_atividade primary key (id),
 titulo varchar (20) not null constraint uq_titulo unique (titulo),
-descriÃ§Ã£o varchar (255),
+descrição varchar (255),
 conteudo varchar (255),
-tipo varchar (15) not null constraint tipo_check check (tipo like 'resposta aberta' or tipo like 'teste'),
+tipo varchar (15) not null constraint tipo_check check (tipo = 'resposta aberta' or tipo = 'teste'),
 extra varchar (255),
 idprofessor smallint not null constraint fk_idprofessor foreign key (idprofessor) references professor(id));
 
@@ -99,7 +102,7 @@ idatividade smallint not null constraint fk_idatividadevinculada foreign key (id
 idprofessor smallint not null constraint fk_idprofessor_atividadevinculada foreign key (idprofessor)references professor(id),
 iddisciplinaofertada smallint not null constraint fk_iddisciplinaofertada_atividadevinculada foreign key (iddisciplinaofertada) references disciplinaofertada(id),
 rotulo varchar (4) not null constraint uq_rotulo unique (rotulo),
-Status varchar (15) null constraint status_check_atividadevinculada check (status like 'disponibilizada'or status like 'aberta' or status like 'fechada' or status like 'fechada' or status like 'encerrada' or status like 'prorrogada'),
+Status varchar (15) null constraint status_check_atividadevinculada check (status = 'disponibilizada'or status = 'aberta' or status = 'fechada' or status = 'fechada' or status = 'encerrada' or status = 'prorrogada'),
 DtInicioRespostas  datetime not null,
 DtFimRespostas datetime not null );
 
@@ -110,7 +113,7 @@ idatividade smallint not null constraint fkid_entrega_atividade foreign key (ida
 titulo varchar(50) not null,
 respota varchar(250) not null,
 dtentrega datetime not null constraint df_dtentrega default (getdate()),
-status varchar (9) not null constraint df_status default 'entregue' constraint ck_status check (status like 'entregue' or status like 'corrigido'),
+status varchar (9) not null constraint df_status default 'entregue' constraint ck_status check (status = 'entregue' or status = 'corrigido'),
 idprofessor smallint null constraint fkid_entrega_professor foreign key (idprofessor) references professor(id),
 nota float (2)null constraint ck_nota check (nota between 0 and 10),
 dtavaliacao datetime null,
@@ -123,7 +126,7 @@ id_professor smallint not null constraint fkid_aluno_professor foreign key (id_p
 assunto varchar (100) not null,
 referencia varchar (150) not null,
 conteudo varchar(250) not null,
-status varchar(10) not null constraint df_status_mensagem default 'enviado' constraint ck_status_mensagem check (status like 'enviado' or status like'lido' or status like 'respondido'),
+status varchar(10) not null constraint df_status_mensagem default 'enviado' constraint ck_status_mensagem check (status = 'enviado' or status ='lido' or status = 'respondido'),
 dtenvio datetime not null constraint dt_envio default (getdate()),
 dtresposta datetime null,
 resposta varchar (250) null);

@@ -8,7 +8,7 @@ create table Usuario(
 ID smallint IDENTITY (1,1) not null constraint PK_IDusuario PRIMARY KEY (ID),
 LOGIN varchar (10) not null CONSTRAINT "UQ_LOGIN" UNIQUE(LOGIN),
 SENHA varchar (16) not null constraint chksenha check (len (senha) >=8),
-DTExpiração DATE CONSTRAINT dfdataexpiração DEFAULT '01/01/1900')
+DTExpiraÃ§Ã£o DATE CONSTRAINT dfdataexpiraÃ§Ã£o DEFAULT '01/01/1900')
 
 CREATE TABLE  COORDENADOR(
 ID SMALLINT IDENTITY (1,1) NOT NULL CONSTRAINT PK_IDcoordenador PRIMARY KEY(ID),
@@ -63,13 +63,13 @@ CREATE TABLE CURSO(
 CREATE TABLE DisciplinaOfertada(
 	ID SMALLINT IDENTITY(1, 1) NOT NULL CONSTRAINT PK_ID_DISCIPLINAOFERTADA PRIMARY KEY(ID),
 	IdCoordenador SMALLINT NOT NULL CONSTRAINT fkid_coordenador_disciplinaofertada FOREIGN KEY (IdCoordenador) REFERENCES COORDENADOR(ID),
-	DtInicioMatricula DATETIME NULL,
-	DtFimMatricula DATETIME NULL,
+	DtInicioMatricula DATE NULL,
+	DtFimMatricula DATE NULL,
 	IdDisciplina SMALLINT NOT NULL CONSTRAINT fkid_disciplina_disciplinaofertada FOREIGN KEY (IdDisciplina) REFERENCES DISCIPLINA(ID),
 	IdCurso SMALLINT NOT NULL CONSTRAINT fkid_curso_disciplinaofertada FOREIGN KEY (IdCurso) REFERENCES Curso(ID),
 	Ano SMALLINT NOT NULL CONSTRAINT Ano_check CHECK (Ano between 1900 and 2100),
 	Semestre tinyint NOT NULL CONSTRAINT Semestre_check CHECK(Semestre = 1 or Semestre = 2),
-	Turma CHAR NOT NULL ,
+	Turma CHAR (4) NOT NULL ,
 	idProfessor SMALLINT NULL CONSTRAINT fkid_professor_disciplinaofertada FOREIGN KEY (IdProfessor) REFERENCES PROFESSOR(ID),
 	Metodologia VARCHAR(250) NULL,
 	Recursos VARCHAR(100),
@@ -90,7 +90,7 @@ constraint status_default_solicitacaomatricula  default ('solicitada'));
 create table atividade(
 id smallint not null constraint  pk_id_atividade primary key (id),
 titulo varchar (20) not null constraint uq_titulo unique (titulo),
-descrição varchar (255),
+descriÃ§Ã£o varchar (255),
 conteudo varchar (255),
 tipo varchar (15) not null constraint tipo_check check (tipo = 'resposta aberta' or tipo = 'teste'),
 extra varchar (255),

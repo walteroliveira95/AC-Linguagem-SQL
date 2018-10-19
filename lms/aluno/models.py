@@ -8,3 +8,7 @@ class Aluno(models.Model):
      celular = models.CharField(max_length=14, unique=True)
      ra = models.IntegerField()
      foto = models.CharField(max_length=350, default=None)
+
+
+     def __str__(self):
+     	return self.nome

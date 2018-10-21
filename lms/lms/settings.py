@@ -19,15 +19,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'usuario',
-    'aluno',
-    'coordenador',
-    'professor',
-    'disciplina',
-    'curso',
-    'atividade',
-    'core',
+    'apps.aluno',
+    'apps.professor',
+    'apps.curso',
+    'apps.disciplina',
+    'apps.coordenador',
     'accounts',
+    'core',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -35,9 +33,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
-    
 ]
+
+AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

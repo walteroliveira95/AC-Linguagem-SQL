@@ -4,5 +4,7 @@ from . import views
 app_name = 'core'
 
 urlpatterns = [
-     url(r'^index/$', views.areadoaluno_index, name='index'),
+     url(r'^$', views.areadoaluno_index, name='index'),
+     #url(r'^aluno/$', views.areadoaluno_index, name='aluno'),
+     url(r'^coordenador/$', views.areadoaluno_index, name='coordenador'),
 ]

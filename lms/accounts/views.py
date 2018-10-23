@@ -1,5 +1,6 @@
 from django.contrib import messages
-
+from apps.coordenador.models import Coordenador
+from apps.aluno.models import Aluno
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login, logout, update_session_auth_hash
@@ -27,10 +28,17 @@ def login_view(request):
             if user.dtExpiracao == date(1900, 1, 1):
                 return redirect('/accounts/changepassword/')
 
+            print()
+
             veiry_account_type(user)
             
-            #return redirect('/area/aluno/')
-            return redirect('/area/coordenador/')
+
+            if Coordenador.objects.filter(usuario = user).count() > 0:
+                return redirect('/coordenador')
+            if Aluno.objects.filter(usuario = user).count() > 0:
+                return redirect('/area/aluno/')
+
+            
     else:
         form = AuthenticationForm()
           

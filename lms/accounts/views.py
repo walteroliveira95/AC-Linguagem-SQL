@@ -36,7 +36,7 @@ def login_view(request):
             if Coordenador.objects.filter(usuario = user).count() > 0:
                 return redirect('/coordenador')
             if Aluno.objects.filter(usuario = user).count() > 0:
-                return redirect('/area/aluno/')
+                return redirect('/aluno/')
 
             
     else:

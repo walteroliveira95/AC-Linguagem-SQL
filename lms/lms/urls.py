@@ -9,8 +9,8 @@ urlpatterns = [
     url(r'^disciplinas/$', views.disciplinas, name='disciplinas'),
     url(r'^noticias/$', views.noticias, name='noticias'),
     url(r'^accounts/', include('accounts.urls')),
-    url(r'^area/', include('core.urls')),
     url(r'^coordenador/', include('apps.coordenador.urls')),
+    url(r'^aluno/', include('apps.aluno.urls')),
     url('admin/', admin.site.urls),
 ]
 

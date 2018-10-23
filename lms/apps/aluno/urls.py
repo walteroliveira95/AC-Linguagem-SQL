@@ -1,4 +1,8 @@
 from django.conf.urls import url
 from . import views
 
-app_name = 'alunos'
+app_name = 'aluno'
+
+urlpatterns = [
+     url(r'^$', views.index, name='index')
+]

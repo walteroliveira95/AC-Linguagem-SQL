@@ -1,4 +1,5 @@
 from django.contrib import messages
+
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm
 from django.contrib.auth import login, logout, update_session_auth_hash
@@ -26,7 +27,8 @@ def login_view(request):
             if user.dtExpiracao == date(1900, 1, 1):
                 return redirect('/accounts/changepassword/')
 
-            #verify user type
+            veiry_account_type(user)
+            
             #return redirect('/area/aluno/')
             return redirect('/area/coordenador/')
     else:
@@ -58,3 +60,7 @@ def change_password(request):
         form = PasswordChangeForm(request.user)
 
     return render(request, 'registration/changepassword.html', { 'form': form })
+
+
+def veiry_account_type(user):
+    pass

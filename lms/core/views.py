@@ -8,4 +8,4 @@ def areadoaluno_index(request):
 		messages.add_message(request, messages.INFO, 'Você nao esta logado, entre com sua conta para continuar.')
 		return redirect('/accounts/login')
 
-	return render(request, 'index.html', { 'user': user, 'teste': 'te' })
+	return render(request, 'index.html', { 'user': user })

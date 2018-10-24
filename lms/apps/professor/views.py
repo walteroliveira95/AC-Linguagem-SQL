@@ -10,5 +10,4 @@ def index(request):
         messages.add_message(request, messages.INFO, 'Você nao esta logado, entre com sua conta para continuar.')
         return redirect('/accounts/login')
 
-
-    return render(request, 'index.html', { 'user': user })
+    return render(request, 'professor/index.html', { 'user': user })

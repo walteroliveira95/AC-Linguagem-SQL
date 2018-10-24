@@ -1,0 +1,16 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+</head>
+<body>
+<h1>Area do aluno</h1>
+{{ user }}
+<!-- todo change css inline -->
+<a href="{% url 'accounts:logout' %}" style="color: black;">Loggout</a>
+
+<p class="lol"> sdadsadsa</p>
+</body>
+</html>

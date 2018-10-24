@@ -11,4 +11,4 @@ def index(request):
         return redirect('/accounts/login')
 
 
-    return render(request, 'index.html', { 'user': user })
+    return render(request, 'aluno/index.html', { 'user': user })

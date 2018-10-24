@@ -11,6 +11,7 @@ urlpatterns = [
     url(r'^accounts/', include('accounts.urls')),
     url(r'^coordenador/', include('apps.coordenador.urls')),
     url(r'^aluno/', include('apps.aluno.urls')),
+    url(r'^professor/', include('apps.professor.urls')),
     url('admin/', admin.site.urls),
 ]
 

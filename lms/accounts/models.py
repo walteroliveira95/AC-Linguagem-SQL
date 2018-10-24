@@ -29,40 +29,40 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser):
-     login          = models.CharField(max_length=100, unique=True)
-     dtExpiracao    = models.DateField(default=date(1900, 1, 1))
-     active         = models.BooleanField(default=True) #can login
-     staff          = models.BooleanField(default=False) # staff user
-     admin          = models.BooleanField(default=False) # superuser
+    login          = models.CharField(max_length=100, unique=True)
+    dtExpiracao    = models.DateField(default=date(1900, 1, 1))
+    active         = models.BooleanField(default=True) #can login
+    staff          = models.BooleanField(default=False) # staff user
+    admin          = models.BooleanField(default=False) # superuser
 
-     USERNAME_FIELD = 'login'
-     REQUIRED_FIELDS = []
+    USERNAME_FIELD = 'login'
+    REQUIRED_FIELDS = []
 
-     object = UserManager()
+    objects = UserManager()
 
-     def __str__(self):
-          return self.login
+    def __str__(self):
+        return self.login
+    
+    def get_full_name(self):
+        return self.login
 
-     def get_full_name(self):
-          return self.login
+    def get_short_name(self):
+        return self.login
 
-     def get_short_name(self):
-          return self.login
+    def has_perm(self, perm, obj=None):
+        return True
 
-     def has_perm(self, perm, obj=None):
-          return True
+    def has_module_perms(self, app_label):
+        return True
 
-     def has_module_perms(self, app_label):
-          return True
+    @property
+    def is_staff(self):
+        return self.staff
 
-     @property
-     def is_staff(self):
-          return self.staff
+    @property
+    def is_admin(self):
+        return self.admin
 
-     @property
-     def is_admin(self):
-          return self.admin
-
-     @property
-     def is_active(self):
-          return self.active
+    @property
+    def is_active(self):
+        return self.active

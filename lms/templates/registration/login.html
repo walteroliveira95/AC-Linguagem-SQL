@@ -1,5 +1,10 @@
 <h2>Login</h2>
 <form method="post">
+  {% if messages %}
+      {% for message in messages %}
+              <p>{{ message }}</p>
+      {% endfor %}
+  {% endif %}
   {% csrf_token %}
   {{ form.as_p }}
   <button type="submit">Login</button>

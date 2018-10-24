@@ -11,7 +11,7 @@
  
  a{
      text-decoration: none;
-     color: #fff;
+    color: #000;
  }
  
  .active{
@@ -46,6 +46,10 @@
      margin-left: 45px;
      font-size: 25px;
  }
+
+ ul li a{
+    color: #fff
+}
  
  ul li:hover{
      text-decoration: underline;

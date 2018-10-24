@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'css/estilo.css' %}">
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
 </head>
 
@@ -16,9 +16,9 @@
         <div class="right height-full">
             <nav>
                 <ul>
-                    <li><a href="{% url 'cursos' %}">cursos</a></li>
-                    <li><a href="{% url 'disciplinas' %}">disciplinas</a></li>
-                    <li><a href="{% url 'noticias' %}">noticias</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'cursos' %}active{% endif %}"><a href="{% url 'cursos' %}">cursos</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'disciplinas' %}active{% endif %}"><a href="{% url 'disciplinas' %}">disciplinas</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'noticias' %}active{% endif %}"><a href="{% url 'noticias' %}">noticias</a></li>
                     <li><a href="{% url 'accounts:login' %}">Login</a></li>
                 </ul>
             </nav>

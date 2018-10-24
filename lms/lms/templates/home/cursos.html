@@ -7,6 +7,16 @@
 <section class="cursos">
      <h1>CURSOS</h1>
      <div>
+        {% for curso in cursos %}
+            
+            <div class="curso">
+                <p class="titulo"><b>{{ curso }}</b></p>
+                <p>Inteligência de Negócio e Gestão de Projetos</p>
+            </div>
+
+        {% endfor %}
+
+
           <div class="curso">
                <p class="titulo"><b>Administração</b></p>
                <p>Inteligência de Negócio e Gestão de Projetos</p>

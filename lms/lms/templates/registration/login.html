@@ -18,8 +18,9 @@
     <p><input type="text" name="username" placeholder="Login" autofocus required id="id_username" ></p>
     <p><input type="password" name="password" placeholder="password" id="id_password"></p>
     <p><input type="submit" placeholder="Login" value="Entrar"></p>
+    <p><a href="{% url 'accounts:signup' %}">criar conta</a></p>
   </form>
-
+  
 </div>
 
 {% endblock %}

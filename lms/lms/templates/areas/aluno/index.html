@@ -6,11 +6,420 @@
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
-<h1>Area do aluno</h1>
-{{ user }}
-<!-- todo change css inline -->
-<a href="{% url 'accounts:logout' %}" style="color: black;">Loggout</a>
+<header>
+	<div class="left">
+		<a href="#"><img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta"></a>
+	</div>
+	<div class="right height-full">
+		<nav class="nav-header">
+				<li><p style="color: #fff">Bem vindo {{ user }}</p></li>
+				<li>
+					<!-- todo change css inline -->
+					<a href="{% url 'accounts:logout' %}" style="color: black;">Loggout</a>
+				</li>
+			<ul>
+				
+				<li>Area do Aluno</li>
+			</ul>
+		</nav>
+	</div>
+</header>
+<section class="body flex">
+	<aside class="menu-admin flex-1">
+		<nav class="nav-aside">
+			<ul>
+				<li>Notas</li>
+				<li>Item 2</li>
+				<li>Item 3</li>
+				<li>Item 4</li>
+				<li>Item 5</li>
+			</ul>
+		</nav>
+	</aside>
 
-<p class="lol"> sdadsadsa</p>
+	<div class="content flex-1">
+		<h1>ADS 1º SEM</h1>
+		<div class="nav-notas">
+			<h2>Disciplinas</h2>
+			<div class="nav-btns">
+				<a href="#" id="btn-disc1" class="active-button">Disciplinas 1</a>
+				<a href="#" id="btn-disc2">Disciplinas 2</a>
+				<a href="#" id="btn-disc3">Disciplinas 3</a>
+				<a href="#" id="btn-disc4">Disciplinas 4</a>
+				<a href="#" id="btn-disc5">Disciplinas 5</a>
+			</div>
+		</div>
+		<div class="table">
+			<table class="notas" id="table-discplina-1">
+				<thead>
+					<tr>
+						<th>Nº</th>
+						<th>Data</th>
+						<th>Nota</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>5</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>8</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>9</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>10</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="notas none" id="table-discplina-2">
+				<thead>
+					<tr>
+						<th>Nº</th>
+						<th>Data</th>
+						<th>Nota</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>5</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>8</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>9</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>10</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+				</tbody>
+			</table>
+
+
+			<table class="notas none" id="table-discplina-3">
+				<thead>
+					<tr>
+						<th>Nº</th>
+						<th>Data</th>
+						<th>Nota</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>5</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>8</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>9</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>10</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="notas none" id="table-discplina-4">
+				<thead>
+					<tr>
+						<th>Nº</th>
+						<th>Data</th>
+						<th>Nota</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>5</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>8</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>9</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>10</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+				</tbody>
+			</table>
+
+			<table class="notas none" id="table-discplina-5">
+				<thead>
+					<tr>
+						<th>Nº</th>
+						<th>Data</th>
+						<th>Nota</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>1</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>2</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>3</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>4</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>5</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>6</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					<tr>
+						<td>7</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+					
+					<tr>
+						<td>8</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>9</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+
+					
+					<tr>
+						<td>10</td>
+						<td>--/--/--</td>
+						<td>--</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</section>
+<section class="admin-footer">
+	<p>Area do aluno</p>
+</section>
 </body>
 </html>

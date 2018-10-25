@@ -10,16 +10,13 @@
 	<div class="left">
 		<a href="#"><img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta"></a>
 	</div>
+	
 	<div class="right height-full">
+			
 		<nav class="nav-header">
-				<li><p style="color: #fff">Bem vindo {{ user }}</p></li>
-				<li>
-					<!-- todo change css inline -->
-					<a href="{% url 'accounts:logout' %}" style="color: black;">Loggout</a>
-				</li>
 			<ul>
-				
-				<li>Area do Aluno</li>
+				<p style="color: #fff">Bem vindo {{ user }}</p>
+				<a href="{% url 'accounts:logout' %}" style="color: #fff">Sair</a>
 			</ul>
 		</nav>
 	</div>

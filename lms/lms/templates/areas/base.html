@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     <script src="{% static '/js/js.js' %}"></script>
+</head>
+<body>
+<header>
+     <div class="left">
+          <a href="#"><img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta"></a>
+     </div>
+     
+     <div class="right height-full">
+               
+          <nav class="nav-header">
+               <ul>
+                    <p style="color: #fff">Bem vindo {{ user }}</p>
+                    <a href="{% url 'accounts:logout' %}" style="color: #fff">Sair</a>
+               </ul>
+          </nav>
+     </div>
+</header>
+<section class="body flex">
+	<aside class="menu-admin flex-1">
+          {% block menu-aside %}
+          {% endblock %}
+     </aside>
+
+     <div class="content flex-1">
+          {% block content %}
+          {% endblock %}
+     </div>
+</section>
+     
+
+<section class="admin-footer">
+	<p>Area interna</p>
+</section>
+</body>
+</html>

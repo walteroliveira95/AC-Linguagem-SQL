@@ -1,11 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
-<h1>Area do Professor</h1>
-{{ user }}
-<a href="{% url 'accounts:logout' %}">Loggout</a>
-</body>
-</html>
+{% extends 'areas/base.html' %}
+
+{% block menu-aside %}
+<nav class="nav-aside">
+	<ul>
+		<li>Item 1</li>
+		<li>Item 2</li>
+		<li>Item 3</li>
+		<li>Item 4</li>
+		<li>Item 5</li>
+	</ul>
+</nav>
+{% endblock %}
+
+{% block content %}
+<h1>Area do professor</h1>
+{% endblock %}

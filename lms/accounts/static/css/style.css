@@ -451,3 +451,7 @@ aside.menu-admin{
 .none{
     display: none;
 }
+
+section.body{
+    min-height: 83vh;
+}

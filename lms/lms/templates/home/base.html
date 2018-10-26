@@ -8,13 +8,12 @@
 </head>
 
 <body>
-        
     <header>
         <div class="left">
             <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta"></a>
         </div>
         <div class="right height-full">
-            <nav>
+            <nav class="nav-header">
                 <ul>
                     <li class="{% if request.resolver_match.url_name == 'cursos' %}active{% endif %}"><a href="{% url 'cursos' %}">cursos</a></li>
                     <li class="{% if request.resolver_match.url_name == 'disciplinas' %}active{% endif %}"><a href="{% url 'disciplinas' %}">disciplinas</a></li>

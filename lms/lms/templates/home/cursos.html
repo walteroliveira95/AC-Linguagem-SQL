@@ -1,0 +1,51 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Cursos{% endblock %}
+
+{% block content %}
+<section class="cursos">
+     <h1>CURSOS</h1>
+     <div>
+        {% for curso in cursos %}
+            
+            <div class="curso">
+                <p class="titulo"><b>{{ curso }}</b></p>
+                <p>Inteligência de Negócio e Gestão de Projetos</p>
+            </div>
+
+        {% endfor %}
+
+
+          <div class="curso">
+               <p class="titulo"><b>Administração</b></p>
+               <p>Inteligência de Negócio e Gestão de Projetos</p>
+          </div>
+
+          <div class="curso">
+               <p class="titulo"><b>Analise e Desenvolvimento de Sistemas</b></p>
+               <p>IoT, DevOps & Mobile</p>
+          </div>
+
+          <div class="curso">
+               <p class="titulo"><b>Analise e Desenvolvimento de Sistemas EAD</b></p>
+               <p>IoT, DevOps & Mobile</p>
+          </div>
+
+          <div class="curso">
+               <p class="titulo"><b>Banco de Dados</b></p>
+               <p>Data Analytics & Big Data</p>
+          </div>
+               
+          <div class="curso">
+               <p class="titulo"><b>Engenharia da Computação</b></p>
+               <p>IoT, Automação, Inteligência Atificial</p>
+          </div>
+
+          <div class="curso">
+               <p class="titulo"><b>Gestão da Tecnologia da Informação</b></p>
+               <p>ERP & Gestão e Qualidade</p>
+          </div>
+     </div>
+</section>
+{% endblock %}

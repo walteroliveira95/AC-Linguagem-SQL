@@ -1,0 +1,59 @@
+{% load static %}
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static '/css/style.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+</head>
+
+<body>
+    <header>
+        <div class="left">
+            <a href="{% url 'home' %}"><img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta"></a>
+        </div>
+        <div class="right height-full">
+            <nav class="nav-header">
+                <ul>
+                    <li class="{% if request.resolver_match.url_name == 'cursos' %}active{% endif %}"><a href="{% url 'cursos' %}">cursos</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'disciplinas' %}active{% endif %}"><a href="{% url 'disciplinas' %}">disciplinas</a></li>
+                    <li class="{% if request.resolver_match.url_name == 'noticias' %}active{% endif %}"><a href="{% url 'noticias' %}">noticias</a></li>
+                    <li><a href="{% url 'accounts:login' %}">Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="content">
+          {% block content %}
+          {% endblock %}
+    </div>
+    <footer>
+        <div class="contato social-medias">
+            <img src="{% static 'img/logo.png' %}" alt="Faculdade Impacta">
+            <div>
+                <div class="icon"><a href="#"><i class="fab fa-facebook-f"></i></a></div>
+                <div class="icon"><a href="#"><i class="fab fa-instagram"></i></a></div>
+                <div class="icon"><a href="#"><i class="fab fa-twitter"></i></a></div>
+                <div class="icon"><a href="#"><i class="fab fa-linkedin-in"></i></a></div>
+                <div class="icon"><a href="#"><i class="fab fa-youtube"></i></a></div>
+            </div>
+        </div>
+        <div class="contato">
+            <p class="title-footer">CONTATO</p>
+
+            <p><b>comercial:</b></p>
+            <p>Tel: 11 3254-8300</p>
+
+            <p><b>Secretaria:</b></p>
+            <p>Tel: 11 5593-5344</p>
+
+            <p>Unidade - Barra Funda Avenida Rudge, 315 - Barra Funda São Paulo / SP</p>
+        </div>
+    </footer>
+</body>
+</html>
+    
+    
+    
+    
+    

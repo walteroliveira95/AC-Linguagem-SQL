@@ -1,0 +1,41 @@
+{% extends 'home/base.html' %}
+{% load static %}
+
+{% block title %}Impacta{% endblock %}
+
+{% block content %}
+    <section class="header">
+        <div class="banner">
+            <img style = position:relative; left:1px; top:-1px; z-index:1 img src="{% static 'img/banner.jpg' %}" alt="">
+        </div>        
+        <div class = "banner2">
+            <img style = position:absolute; left:1px; top:120px; z-index:0 img src="{% static 'img/vestibular-2019.png' %}">
+        </div>
+    </section>
+            
+    <section class="cursos">
+        <div class="cursos-principal">
+            <h1>CONHEÇA NOSSOS CURSOS</h1>
+            <p>Considerada uma das melhores faculdades com foco em tecnologia do País, a Faculdade Impacta oferece cursos de Graduação, Pós-Graduação e MBA e cursos técnicos. Conheça quais são as áreas de conhecimento que a Impacta aborda e saiba um pouco mais sobre cada curso:</p>
+            <div class="hr-top">
+                <div class="info">
+                    <p class="titulo"><b>Jogos Digitais</b></p>
+                    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum turpis sit amet nulla interdum interdum eget at lorem.</p>
+                    <div class="btn">Saiba mais</div>
+                </div>
+
+                <div class="info">
+                    <p class="titulo"><b>Banco de Dados</b></p>
+                    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum turpis sit amet nulla interdum interdum eget at lorem.</p>
+                    <div class="btn">Saiba mais</div>
+                </div>
+
+                <div class="info">
+                    <p class="titulo"><b>Redes de computadores</b></p>
+                    <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean bibendum turpis sit amet nulla interdum interdum eget at lorem.</p>
+                    <div class="btn">Saiba mais</div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

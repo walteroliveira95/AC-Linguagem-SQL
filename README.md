@@ -1,3 +1,4 @@
 # LMS
 
-* Sistema de gerenciamento escolar
+
+ Sistema para gerenciamento escolar

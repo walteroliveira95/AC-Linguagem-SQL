@@ -1,12 +1,14 @@
-from django.shortcuts import render
-from apps.curso.models import Curso
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import  AuthenticationForm
+from core.forms import UserCreationForm
+from django.contrib.auth import login
+from datetime import date, datetime
 
-def homepage(request):
+def index(request):
     return render(request, 'home/index.html')
 
 def cursos(request):
-    cursos = Curso.objects.all()
-    return render(request, 'home/cursos.html', { 'cursos': cursos })
+    return render(request, 'home/cursos.html')
 
 def disciplinas(request):
     return render(request, 'home/disciplinas.html')

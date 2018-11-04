@@ -1,0 +1,20 @@
+{% extends 'areas/base.html' %}
+
+{% block menu-aside %}
+	{% include 'areas/coordenador/_parts/menu.html' %}
+{% endblock %}
+
+{% block content %}
+<h1>Disciplinas</h1>
+
+{% for disciplina in disciplinas %}
+
+<p>
+     {{ disciplina.nome }} 
+     <input type="button" value="editar">
+     <input type="button" value="excluir">
+</p>
+
+{% endfor %}
+
+{% endblock %}
